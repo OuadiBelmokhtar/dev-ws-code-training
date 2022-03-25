@@ -1,8 +1,8 @@
-package me.obelmokhtar.demowsrestjaxrsjersey;
+package me.obelmokhtar.demowsrestspringrestcontroller;
 
-import me.obelmokhtar.demowsrestjaxrsjersey.entities.Compte;
-import me.obelmokhtar.demowsrestjaxrsjersey.entities.TypeCompte;
-import me.obelmokhtar.demowsrestjaxrsjersey.repositories.CompteRepository;
+import me.obelmokhtar.demowsrestspringrestcontroller.entities.Compte;
+import me.obelmokhtar.demowsrestspringrestcontroller.entities.TypeCompte;
+import me.obelmokhtar.demowsrestspringrestcontroller.repositories.CompteRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,12 +11,11 @@ import org.springframework.context.annotation.Bean;
 import java.util.Date;
 
 @SpringBootApplication
-public class DemoWsRestJaxrsJerseyApplication {
+public class DemoWsRestSpringRestcontrollerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoWsRestJaxrsJerseyApplication.class, args);
+        SpringApplication.run(DemoWsRestSpringRestcontrollerApplication.class, args);
     }
-
     @Bean
     CommandLineRunner start(CompteRepository compteRepository) {
 
