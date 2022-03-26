@@ -6,13 +6,12 @@ import me.obelmokhtar.demowsrestspringrestcontroller.repositories.CompteReposito
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/banque-rsctrl")
-@AllArgsConstructor
+@AllArgsConstructor // pr l injection de dep
 public class CompteSpringRestController {
     private CompteRepository compteRepository;
 
@@ -37,7 +36,7 @@ public class CompteSpringRestController {
         Compte compte = compteRepository.findById(idCptToUpdate).orElse(null);
         if (compte == null)
             throw new IllegalArgumentException("Compte introuvable");
-        updatedCpt.setCode(compte.getCode());// obligatoire, car lobjet updatedCpt recu ds la req est sans code, par consequent save() va faire INSERT INTO au lieu de UPDATE
+        updatedCpt.setCode(compte.getCode());// obligatoire pr assurer que l id de updatedCpt existe ds la BD, ce qui va permettre à save() de faire UPDATE non pas INSERT
         return compteRepository.save(updatedCpt);
     }
 
