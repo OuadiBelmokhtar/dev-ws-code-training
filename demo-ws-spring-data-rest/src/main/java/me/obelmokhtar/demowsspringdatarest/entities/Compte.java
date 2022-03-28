@@ -27,4 +27,6 @@ public class Compte implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(length = 15)
     private TypeCompte type;
+    @ManyToOne
+    private Client client;
 }
