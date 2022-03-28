@@ -24,31 +24,6 @@ public class DemoWsSpringDataRestApplication {
         SpringApplication.run(DemoWsSpringDataRestApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner init(CompteRepository compteRepository,
-                                  ClientRepository clientRepository,
-                                  RepositoryRestConfiguration repositoryRestConfiguration) {
-        repositoryRestConfiguration.exposeIdsFor(Compte.class);
-        return args -> {
 
-            Stream.of("Ahmed", "Taha").forEach(name -> {
-                Client client = new Client();
-                client.setName(name);
-                clientRepository.save(client);
-            });
-            Client client = clientRepository.findById(1L).orElse(null);
-
-            DoubleStream.of(10000, 1500, 3000).forEach(solde -> {
-                Compte compte = new Compte();
-                compte.setDateCreation(new Date());
-                compte.setSolde(solde);
-                compte.setType(Math.random() > 0.5 ? TypeCompte.EPARGNE : TypeCompte.COURANT);
-                compte.setClient(client);
-                compteRepository.save(compte);
-                client.getComptes().add(compte);
-
-            });
-        };
-    }
 
 }
