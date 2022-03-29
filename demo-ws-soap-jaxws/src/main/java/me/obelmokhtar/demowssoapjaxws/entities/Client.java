@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD) // indiquer a JAXB que les annotations sont palces sur les attribtus non pas les getters
+@XmlAccessorType(XmlAccessType.FIELD) // indiquer a JAXB que les annotations sont palcees sur les attribtus non pas les getters
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
 public class Client {

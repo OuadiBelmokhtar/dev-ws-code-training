@@ -48,7 +48,7 @@ public class DemoWsSoapJaxwsApplication {
         };
     }
 
-    // pr deployer le service web. en utilisant Spring
+    // pr deployer le service soap en utilisant Spring
     @Bean
     SimpleJaxWsServiceExporter jaxWsServiceExporter(){
         SimpleJaxWsServiceExporter serviceExporter=new SimpleJaxWsServiceExporter();
